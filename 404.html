@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Strafe Shop</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+        
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-black text-white flex flex-col items-center justify-center relative overflow-hidden">
+    <!-- Animated background gradient -->
+    <div class="fixed inset-0 bg-gradient-radial from-cyan-900/20 to-transparent pointer-events-none">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent"></div>
+        </div>
+    </div>
+
+    <!-- Grid background -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#22d3ee_1px,transparent_1px),linear-gradient(to_bottom,#22d3ee_1px,transparent_1px)] bg-[size:20px_20px] opacity-10"></div>
+
+    <!-- Content -->
+    <div class="relative text-center px-4">
+        <h1 class="text-[150px] font-bold leading-none glitch">
+            <span class="bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
+                404
+            </span>
+        </h1>
+        <p class="text-3xl font-semibold mb-4 bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">
+            Page Not Found
+        </p>
+        <p class="text-blue-100/70 text-lg mb-8 max-w-md mx-auto">
+            The page you're looking for doesn't exist or has been moved.
+        </p>
+        <a href="/" class="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-lg px-8 py-3 rounded-md relative group overflow-hidden transition-all duration-300">
+            <span class="relative z-10 flex items-center">
+                Back to Home
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </span>
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 transform group-hover:scale-105 transition-transform duration-300"></div>
+        </a>
+    </div>
+
+    <!-- Decorative elements -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-10 left-20 text-blue-500/20 w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="absolute bottom-20 right-20 text-blue-500/20 w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyan-900/30 bg-black/50 backdrop-blur-lg w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Logo and Description -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-cyan-400">
+                            Strafe Shop
+                        </span>
+                    </div>
+                    <p class="text-blue-100/70">
+                        Leading provider of advanced gaming solutions. Custom-coded for optimal performance.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/#products" class="text-cyan-100/70 hover:text-cyan-400 transition-colors">Products</a>
+                        </li>
+                        <li>
+                            <a href="/#about" class="text-cyan-100/70 hover:text-cyan-400 transition-colors">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/support.html" class="text-cyan-100/70 hover:text-cyan-400 transition-colors">Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social & Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="/discord.html" class="text-cyan-100/70 hover:text-cyan-400 transition-colors flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.175 13.175 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+                            </svg>
+                            <span class="ml-2">Join our Discord</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-blue-900/30 text-center text-blue-100/70">
+                <p>&copy; 2024 Strafe Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>                        

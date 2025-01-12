@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Strafe Shop</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-black text-white">
+    <!-- Navigation -->
+    <nav class="border-b border-cyan-900/30 backdrop-blur-lg bg-black/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="/" class="flex items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cyan-500 group-hover:text-cyan-400 transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-cyan-400">
+                        Strafe Shop
+                    </span>
+                </a>
+                <div class="flex space-x-8">
+                    <a href="/products.html" class="text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 px-4 py-2 rounded-md transition-all duration-300">Products</a>
+                    <a href="/discord.html" class="text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 px-4 py-2 rounded-md transition-all duration-300">Discord</a>
+                    <a href="/about.html" class="text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 px-4 py-2 rounded-md transition-all duration-300">About</a>
+                    <a href="/support.html" class="text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 px-4 py-2 rounded-md transition-all duration-300">Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="py-24 text-center">
+        <h1 class="text-5xl font-bold mb-6">
+            <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                24/7 Premium Support
+            </span>
+        </h1>
+        <p class="text-xl text-blue-100/70 max-w-2xl mx-auto">
+            Our dedicated support team is here to help you with any questions or issues
+        </p>
+    </div>
+
+    <!-- Support Options -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 gap-8">
+            <!-- Discord Support -->
+            <div class="max-w-md mx-auto w-full group bg-gray-900/50 backdrop-blur-sm border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300 rounded-lg p-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6 group-hover:scale-110 group-hover:text-purple-400 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <h3 class="text-2xl font-bold mb-4">Discord Support</h3>
+                <p class="text-cyan-100/70 mb-6">
+                    Join our Discord community for instant support and updates
+                </p>
+                <button onclick="window.location.href='https://discord.gg/5PJ2Cmz6dm'" 
+                        class="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300">
+                    Join Discord
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- 24/7 Availability -->
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-blue-500 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <h3 class="text-xl font-bold mb-2">24/7 Availability</h3>
+                <p class="text-blue-100/70">
+                    Support team available round the clock
+                </p>
+            </div>
+
+            <!-- Priority Support -->
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-blue-500 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <h3 class="text-xl font-bold mb-2">Priority Support</h3>
+                <p class="text-blue-100/70">
+                    Premium users get faster response times
+                </p>
+            </div>
+
+            <!-- Community Help -->
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-blue-500 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <h3 class="text-xl font-bold mb-2">Community Help</h3>
+                <p class="text-blue-100/70">
+                    Active community for peer support
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
