@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 214 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 100% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 214 100% 10%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 214 100% 15%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 100% 20%;
+    --input: 214 100% 20%;
+    --ring: 214 100% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
