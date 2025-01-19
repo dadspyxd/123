@@ -72,12 +72,13 @@
 
 /* Gaming Theme Elements */
 .gaming-card {
-    background: rgba(17, 24, 39, 0.5);
+    background: rgba(79, 70, 229, 0.1);
     border: 1px solid rgba(59, 130, 246, 0.3);
     transition: all 0.3s ease;
     transform-style: preserve-3d;
     animation: card-float 3s ease-in-out infinite;
     backface-visibility: hidden;
+    backdrop-filter: blur(8px);
 }
 
 .gaming-card:hover {
@@ -130,12 +131,12 @@
 }
 
 .gaming-button {
-    background: linear-gradient(45deg, #1d4ed8, #3b82f6);
+    background: linear-gradient(45deg, #4f46e5, #3b82f6);
     transition: all 0.3s ease;
 }
 
 .gaming-button:hover {
-    background: linear-gradient(45deg, #2563eb, #60a5fa);
+    background: linear-gradient(45deg, #6366f1, #60a5fa);
     transform: scale(1.05);
 }
 
