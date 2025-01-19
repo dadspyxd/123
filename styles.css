@@ -183,7 +183,7 @@
     transition: transform 0.2s ease-out;
 }
 
-/* Enhanced Background Effects */
+/* Enhanced Background Effects - Inspired by Devin.ai's sophisticated design */
 .blur-[200px] {
     filter: blur(200px);
 }
