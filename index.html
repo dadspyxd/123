@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strafe Shop - Advanced Gaming Solutions</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://pay.sellsn.io/embed.min.js"></script>
+    <script>
+        // Initialize SellSN embed on page load
+        window.addEventListener('load', function() {
+            window.initializeSellSnEmbed();
+        });
+
+        // Functions to open SellSN modals
+        function openExternalModal() {
+            window.openSellSnModal('5b0691a0-1f91-4146-94a4-e68ad9a5955d', null, '29c060f2-fcd0-452f-80fe-0d766594e170');
+        }
+
+        function openSpooferModal() {
+            window.openSellSnModal('5b0691a0-1f91-4146-94a4-e68ad9a5955d', null, '7c9d127e-1833-40ab-8610-ff137bb54695');
+        }
+
+        function openAimskillsModal() {
+            window.openSellSnModal('5b0691a0-1f91-4146-94a4-e68ad9a5955d', null, 'a631f867-8e14-4668-8853-2140cda9554a');
+        }
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                        destructive: {
+                            DEFAULT: "hsl(var(--destructive))",
+                            foreground: "hsl(var(--destructive-foreground))",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(var(--muted))",
+                            foreground: "hsl(var(--muted-foreground))",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(var(--accent))",
+                            foreground: "hsl(var(--accent-foreground))",
+                        },
+                        popover: {
+                            DEFAULT: "hsl(var(--popover))",
+                            foreground: "hsl(var(--popover-foreground))",
+                        },
+                        card: {
+                            DEFAULT: "hsl(var(--card))",
+                            foreground: "hsl(var(--card-foreground))",
+                        },
+                    },
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .mouse-gradient {
+            transition: transform 0.2s ease-out;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .gaming-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(88, 28, 135, 0.2);
+        }
+        .gaming-button {
+            background: linear-gradient(to right, #0891b2, #6b21a8);
+            transition: all 0.3s ease;
+        }
+        .gaming-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(88, 28, 135, 0.3);
+        }
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-black text-white">
+    <!-- Navigation -->
+    <nav class="border-b border-purple-900/30 backdrop-blur-lg bg-black/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="/" class="flex items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cyan-600 group-hover:text-purple-700 transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-purple-700">
+                        Strafe Shop
+                    </span>
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Desktop menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#products" class="text-gray-300 hover:text-purple-600 hover:bg-purple-900/10 px-4 py-2 rounded-md transition-all duration-300">Products</a>
+                    <a href="#about" class="text-gray-300 hover:text-purple-600 hover:bg-purple-900/10 px-4 py-2 rounded-md transition-all duration-300">About</a>
+                    <a href="/support.html" class="text-gray-300 hover:text-purple-600 hover:bg-purple-900/10 px-4 py-2 rounded-md transition-all duration-300">Support</a>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div class="mobile-menu md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#products" class="block text-gray-300 hover:text-purple-600 hover:bg-purple-900/10 px-3 py-2 rounded-md">Products</a>
+                    <a href="#about" class="block text-gray-300 hover:text-purple-600 hover:bg-purple-900/10 px-3 py-2 rounded-md">About</a>
+                    <a href="/support.html" class="block text-gray-300 hover:text-purple-600 hover:bg-purple-900/10 px-3 py-2 rounded-md">Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="py-16 md:py-32 text-center relative">
+        <!-- Animated background gradient -->
+        <div class="fixed inset-0 bg-gradient-radial from-purple-900/20 to-transparent pointer-events-none mouse-gradient">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute inset-0 bg-gradient-to-b from-cyan-700/10 to-transparent"></div>
+            </div>
+        </div>
+
+        <!-- Enhanced background effects -->
+        <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-blue-500/20 blur-[200px] animate-pulse"></div>
+            <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-700/20 blur-[150px] animate-float"></div>
+            <div class="absolute top-1/4 left-0 w-[800px] h-[800px] bg-cyan-500/20 blur-[180px] animate-pulse delay-1000"></div>
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-10 left-20 text-cyan-500/20 w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                <path d="M12 2v4"></path>
+                <path d="M12 18v4"></path>
+                <path d="M7 10h2"></path>
+                <path d="M15 10h2"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="absolute bottom-20 right-20 text-cyan-500/20 w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-40 right-32 text-cyan-500/20 w-12 h-12 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+        </div>
+
+        <h1 class="text-4xl md:text-7xl font-bold mb-8 relative px-4">
+            <span class="bg-gradient-to-r from-cyan-600 to-purple-800 bg-clip-text text-transparent">
+                THE MOST ADVANCED
+            </span>
+            <br />
+            <span class="bg-gradient-to-r from-cyan-700 to-purple-900 bg-clip-text text-transparent relative">
+                &amp; SAFEST CHEATS
+                <div class="absolute -inset-1 bg-purple-800/20 blur-xl -z-10"></div>
+            </span>
+        </h1>
+        <p class="text-lg md:text-xl text-cyan-100/70 mb-12 max-w-2xl mx-auto leading-relaxed px-4">
+            We are not resellers.
+            <br />All cheats are coded by us! 
+            <span class="inline-block animate-pulse">⚡</span>
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6 px-4">
+            <button class="w-full md:w-auto bg-cyan-500 hover:bg-cyan-600 text-lg px-8 py-3 rounded-md relative group overflow-hidden">
+                <span class="relative z-10 flex items-center justify-center">
+                    VISIT OUR SHOP
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </span>
+                <div class="absolute inset-0 bg-gradient-to-r from-cyan-600 to-cyan-500 transform group-hover:scale-105 transition-transform duration-300"></div>
+            </button>
+            <button class="w-full md:w-auto border border-cyan-500/50 hover:bg-cyan-500/10 hover:border-cyan-400 text-lg px-8 py-3 rounded-md transition-all duration-300">
+                GO TO FORUM
+            </button>
+        </div>
+    </div>
+
+    <!-- Gaming Workspace Panel -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative">
+        <div class="gaming-workspace relative w-full backdrop-blur-sm rounded-lg p-8 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300">
+            <div class="flex gap-6 mb-6 text-cyan-100/80">
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full bg-cyan-500"></div>
+                    <span>Gaming Shell</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full bg-cyan-500/60"></div>
+                    <span>Game Browser</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full bg-cyan-500/60"></div>
+                    <span>Config Editor</span>
+                </div>
+            </div>
+            <div class="font-mono text-sm text-cyan-500/80">
+                <div class="mb-2">$ initialize_gaming_environment()</div>
+                <div class="mb-2">$ load_game_assets()</div>
+                <div class="mb-2">$ configure_game_settings()</div>
+                <div class="mb-2">$ start_game_server()</div>
+                <div>$ launch_game_client()</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none">
+            <div class="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,#3b82f6_1px,transparent_1px),linear-gradient(to_bottom,#3b82f6_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
+            <!-- Best Performance -->
+            <div class="group bg-gray-900/50 backdrop-blur-sm border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300 rounded-lg p-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6 group-hover:scale-110 group-hover:text-purple-400 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">
+                    Best Performance
+                </h3>
+                <p class="text-cyan-100/70 leading-relaxed">
+                    Real time capture with an average of 2-7ms. Well above market average!
+                </p>
+            </div>
+
+            <!-- High-Level Security -->
+            <div class="group bg-gray-900/50 backdrop-blur-sm border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300 rounded-lg p-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6 group-hover:scale-110 group-hover:text-purple-400 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">
+                    High-Level Security
+                </h3>
+                <p class="text-cyan-100/70 leading-relaxed">
+                    Unlimited unique builds, Unique bypass
+                </p>
+            </div>
+
+            <!-- Support latest OS -->
+            <div class="group bg-gray-900/50 backdrop-blur-sm border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300 rounded-lg p-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6 group-hover:scale-110 group-hover:text-purple-400 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">
+                    Support latest OS
+                </h3>
+                <p class="text-cyan-100/70 leading-relaxed">
+                    Keep up with technology, Windows 10/11 supported
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12">
+            <span class="bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">Our </span>
+            <span class="text-purple-500">Products</span>
+        </h2>
+        <div class="relative">
+            <div class="overflow-x-auto hide-scrollbar">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="productsContainer">
+                    <!-- External -->
+                    <div class="gaming-card rounded-lg p-8 min-w-[320px] hover:scale-105 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                        <h3 class="text-2xl font-bold mb-4">External</h3>
+                        <ul class="text-cyan-100/70 mb-6 space-y-2 min-h-[240px]">
+                            <li>• All Intel & AMD CPU's</li>
+                            <li>• Windows 10 & 11</li>
+                            <li>• Private Driver</li>
+                            <li>• HVCI Supported</li>
+                            <li>• Aimbot</li>
+                            <li>• ESP</li>
+                            <li>• Radar</li>
+                        </ul>
+                        <button class="gaming-button w-full py-2 rounded-md text-white" 
+                            onclick="openExternalModal()">
+                            Purchase Now
+                        </button>
+                    </div>
+
+                    <!-- Spoofer -->
+                    <div class="gaming-card rounded-lg p-8 min-w-[320px] hover:scale-105 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M12 22V12"/>
+                            <path d="M12 12L20 5"/>
+                            <path d="M12 12L4 5"/>
+                        </svg>
+                        <h3 class="text-2xl font-bold mb-4">Spoofer</h3>
+                        <ul class="text-cyan-100/70 mb-6 space-y-2 min-h-[240px]">
+                            <li>• All Intel & AMD CPU's</li>
+                            <li>• Windows 10 & 11</li>
+                            <li>• Vanguard bypass</li>
+                            <li>• Supports all motherboards</li>
+                        </ul>
+                        <button class="gaming-button w-full py-2 rounded-md text-white"
+                            onclick="openSpooferModal()">
+                            Purchase Now
+                        </button>
+                    </div>
+
+                    <!-- Aimskills -->
+                    <div class="gaming-card rounded-lg p-8 min-w-[320px] hover:scale-105 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M22 12h-4"/>
+                            <path d="M6 12H2"/>
+                            <path d="M12 6V2"/>
+                            <path d="M12 22v-4"/>
+                        </svg>
+                        <h3 class="text-2xl font-bold mb-4">Aimskills</h3>
+                        <ul class="text-cyan-100/70 mb-6 space-y-2 min-h-[240px]">
+                            <li>• Working for all GPU's</li>
+                            <li>• Windows 10 & 11</li>
+                            <li>• HVCI Support</li>
+                            <li>• Aimbot</li>
+                            <li>• Recoil Control System</li>
+                            <li>• Flickbot</li>
+                        </ul>
+                        <button class="gaming-button w-full py-2 rounded-md text-white"
+                            onclick="openAimskillsModal()">
+                            Purchase Now
+                        </button>
+                    </div>
+
+                    <!-- Liteaim -->
+                    <div class="gaming-card rounded-lg p-8 min-w-[320px] hover:scale-105 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M3 12h6"/>
+                            <path d="M15 12h6"/>
+                            <path d="M12 3v6"/>
+                            <path d="M12 15v6"/>
+                        </svg>
+                        <h3 class="text-2xl font-bold mb-4">Liteaim</h3>
+                        <ul class="text-cyan-100/70 mb-6 space-y-2">
+                            <li>• Lightweight solution</li>
+                            <li>• Performance optimized</li>
+                            <li>• Easy to use</li>
+                        </ul>
+                        <button class="gaming-button w-full py-2 rounded-md text-white"
+                            onclick="window.openSellSnModal('5b0691a0-1f91-4146-94a4-e68ad9a5955d', null, 'f57a55de-0345-483e-80dd-2916ed516c8d')">
+                            Purchase Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <h2 class="text-5xl font-bold text-center mb-12">
+            <span class="bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">About </span>
+            <span class="text-purple-500">Strafe Shop</span>
+        </h2>
+        
+        <!-- Mission & Vision -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+            <!-- Mission -->
+            <div class="gaming-card rounded-lg p-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <h3 class="text-2xl font-bold mb-4">Our Legacy</h3>
+                <p class="text-cyan-100/70">
+                    For over 5 years, we've been a trusted name in the gaming industry. Our dedicated team works tirelessly to deliver cutting-edge solutions that give our users the competitive edge they deserve. With thousands of satisfied customers and a proven track record of excellence, we continue to set the standard for quality and reliability.
+                </p>
+            </div>
+
+            <!-- Vision -->
+            <div class="gaming-card rounded-lg p-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <h3 class="text-2xl font-bold mb-4">Our Commitment</h3>
+                <p class="text-cyan-100/70">
+                    What sets us apart is our unwavering commitment to innovation and customer satisfaction. Our products are meticulously crafted by expert developers who understand the gaming landscape. We take pride in offering the most advanced, secure, and reliable solutions in the market, backed by our responsive 24/7 support team.
+                </p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Custom Code -->
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                <h3 class="text-4xl font-bold mb-2">100%</h3>
+                <p class="text-cyan-100/70">Custom Code</p>
+            </div>
+
+            <!-- Active Users -->
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <h3 class="text-4xl font-bold mb-2">10K+</h3>
+                <p class="text-cyan-100/70">Active Users</p>
+            </div>
+
+            <!-- Support -->
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-500 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <h3 class="text-4xl font-bold mb-2">24/7</h3>
+                <p class="text-cyan-100/70">Support Available</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <h2 class="text-4xl font-bold text-center mb-16">
+            <span class="bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent">Frequently Asked </span>
+            <span class="text-purple-500">Questions</span>
+        </h2>
+        <div class="space-y-4" id="faq-container">
+            <!-- FAQ items will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Mouse gradient effect
+        document.addEventListener('mousemove', (e) => {
+            const mouseGradient = document.querySelector('.mouse-gradient');
+            if (mouseGradient) {
+                const x = e.clientX * 0.02;
+                const y = e.clientY * 0.02;
+                mouseGradient.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        });
+
+        // FAQ functionality
+        const faqs = [
+            { question: "How does it work?", answer: "Our cheats are designed to work seamlessly with your games. After purchase, you'll receive instant access to our loader and detailed instructions." },
+            { question: "Will I get banned?", answer: "We use advanced protection systems to ensure our cheats remain undetected. However, we recommend following our guidelines for the safest experience." },
+            { question: "How can I get support?", answer: "Our support team is available 24/7 through Discord and our forum. Premium users get priority support with faster response times." },
+            { question: "Can I pay securely?", answer: "Yes, we offer secure payment methods including credit cards and cryptocurrency. All transactions are encrypted and processed through trusted providers." }
+        ];
+
+        const faqContainer = document.getElementById('faq-container');
+        faqs.forEach((faq, index) => {
+            const faqElement = document.createElement('div');
+            faqElement.className = 'border border-purple-900/30 rounded-lg bg-gray-900/50 backdrop-blur-sm overflow-hidden';
+            faqElement.innerHTML = `
+                <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-purple-500/10 transition-colors">
+                    <span class="text-lg font-semibold text-white">${faq.question}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cyan-500 transform transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="px-6 py-4 text-cyan-100/70 transition-all duration-300 hidden">
+                    ${faq.answer}
+                </div>
+            `;
+
+            const button = faqElement.querySelector('button');
+            const content = faqElement.querySelector('div:last-child');
+            const icon = button.querySelector('svg');
+
+            button.addEventListener('click', () => {
+                const isExpanded = !content.classList.contains('hidden');
+                content.classList.toggle('hidden');
+                icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+
+            faqContainer.appendChild(faqElement);
+        });
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="border-t border-purple-900/30 bg-black/50 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Logo and Description -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-purple-700">
+                            Strafe Shop
+                        </span>
+                    </div>
+                    <p class="text-cyan-100/70">
+                        Leading provider of advanced gaming solutions. Custom-coded for optimal performance.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#products" class="text-cyan-100/70 hover:text-purple-600 transition-colors">Products</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-cyan-100/70 hover:text-purple-600 transition-colors">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/support.html" class="text-cyan-100/70 hover:text-purple-600 transition-colors">Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social & Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-white">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="/discord.html" class="text-cyan-100/70 hover:text-purple-600 transition-colors flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.175 13.175 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+                            </svg>
+                            <span class="ml-2">Join our Discord</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-purple-900/30 text-center text-cyan-100/70">
+                <p>&copy; 2024 Strafe Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

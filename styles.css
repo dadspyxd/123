@@ -1,0 +1,212 @@
+:root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 214 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 100% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 214 100% 10%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 214 100% 15%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 100% 20%;
+    --input: 214 100% 20%;
+    --ring: 214 100% 50%;
+    --radius: 0.5rem;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes card-float {
+    0%, 100% {
+        transform: perspective(1000px) rotateX(5deg) rotateZ(-5deg) translateY(0);
+    }
+    50% {
+        transform: perspective(1000px) rotateX(5deg) rotateZ(-5deg) translateY(-10px);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Custom Utilities */
+.bg-gradient-radial {
+    background-image: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+.backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+}
+
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Gaming Theme Elements */
+.gaming-card {
+    background: rgba(79, 70, 229, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    animation: card-float 3s ease-in-out infinite;
+    backface-visibility: hidden;
+    backdrop-filter: blur(8px);
+}
+
+.gaming-card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: perspective(1000px) rotateX(10deg) rotateZ(-8deg) translateY(-5px);
+    box-shadow: 
+        0 10px 30px -5px rgba(59, 130, 246, 0.3),
+        0 0 20px -5px rgba(59, 130, 246, 0.2);
+}
+
+/* Gaming Workspace Panel */
+.gaming-workspace {
+    background: rgba(17, 24, 39, 0.5);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    animation: workspace-float 3s ease-in-out infinite;
+    backface-visibility: hidden;
+}
+
+@keyframes workspace-float {
+    0%, 100% {
+        transform: perspective(1000px) rotateX(2deg) translateY(0);
+    }
+    50% {
+        transform: perspective(1000px) rotateX(2deg) translateY(-5px);
+    }
+}
+
+.gaming-workspace::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(6, 182, 212, 0.3) 50%,
+        transparent 100%
+    );
+}
+
+.gaming-workspace:hover {
+    border-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 
+        0 10px 30px -5px rgba(6, 182, 212, 0.2),
+        0 0 20px -5px rgba(6, 182, 212, 0.1);
+    transform: perspective(1000px) rotateX(4deg) translateY(-2px);
+}
+
+.gaming-button {
+    background: linear-gradient(45deg, #4f46e5, #3b82f6);
+    transition: all 0.3s ease;
+}
+
+.gaming-button:hover {
+    background: linear-gradient(45deg, #6366f1, #60a5fa);
+    transform: scale(1.05);
+}
+
+/* Apple-inspired Design Elements */
+.clean-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift {
+    transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Navigation Styles */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mouse Gradient Effect */
+.mouse-gradient {
+    transition: transform 0.2s ease-out;
+}
+
+/* Enhanced Background Effects */
+.blur-[200px] {
+    filter: blur(200px);
+}
+
+.blur-[180px] {
+    filter: blur(180px);
+}
+
+.blur-[150px] {
+    filter: blur(150px);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Animation Delay Utilities */
+.delay-1000 {
+    animation-delay: 1000ms;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
